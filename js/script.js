@@ -16,6 +16,8 @@ Ragioniamo come sempre a step.
 Prima la logica in italiano e poi traduciamo in codice.
 */
 
+const eleCardsContainer = document.querySelector('.cards-container');
+
 const person1 = {
     'name': 'Wayne Barnett',
     'job': 'Founder & CEO',
@@ -58,4 +60,29 @@ const arrEmployes = [person1, person2, person3, person4, person5, person6];
 //     console.log(person1[key]);
 // }
 
-console.log(arrEmployes);
+//console.log(arrEmployes);
+
+printCards();
+
+function printCards(){
+    for(i = 0; i < arrEmployes.length; i++){
+        //make div
+        const eleDiv = document.createElement('div');
+        eleDiv.classList.add('card');
+        eleCardsContainer.append(eleDiv);
+        //make img
+        const eleImg = document.createElement('img');
+        eleImg.src = "https://picsum.photos/200/301";
+        eleDiv.appendChild(eleImg);
+        //make h4
+        const eleH3 = document.createElement('h3');
+        eleH3.innerHTML = arrEmployes[i].name;
+        eleDiv.append(eleH3);
+        //make p
+        const eleP = document.createElement('p');
+        eleP.innerHTML = arrEmployes[i].job;
+        eleDiv.append(eleP);
+        //console.log(arrEmployes[i].name);
+        
+    }
+}
