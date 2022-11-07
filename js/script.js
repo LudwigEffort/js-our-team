@@ -72,7 +72,7 @@ function printCards(){
         eleCardsContainer.append(eleDiv);
         //make img
         const eleImg = document.createElement('img');
-        eleImg.src = "https://picsum.photos/200/301";
+        eleImg.src = `img/${arrEmployes[i].img}`;
         eleDiv.appendChild(eleImg);
         //make h4
         const eleH3 = document.createElement('h3');
